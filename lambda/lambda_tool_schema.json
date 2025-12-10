@@ -1,0 +1,16 @@
+[
+  {
+    "name": "getWeather",
+    "description": "Get weather for a city",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string",
+          "description": "the city to get the weather for"
+        }
+      },
+      "required": ["city"]
+    }
+  }
+]
