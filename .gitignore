@@ -56,6 +56,6 @@ tsconfig.json
 # CDK output
 cdk.out/
 
-# Transpiled files in lambda folder
-lambda/*.js
-lambda/*.d.ts
+# Transpiled files in lib/policy
+lib/policy/*.js
+lib/policy/*.d.ts
