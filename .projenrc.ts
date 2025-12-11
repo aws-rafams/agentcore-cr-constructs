@@ -1,18 +1,22 @@
 import { awscdk } from 'projen';
+import { NodePackageManager } from 'projen/lib/javascript';
 const CDK_VERSION = '2.232.1';
 const project = new awscdk.AwsCdkConstructLibrary({
+  name: 'agentcore-experimental-constructs',
   author: 'Rafael Mosca',
   authorAddress: 'rafams@amazon.co.uk',
-  cdkVersion: CDK_VERSION,
-  defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.9.0',
-  name: 'agentcore-experimental-constructs',
-  projenrcTs: true,
+  copyrightPeriod: '2025-',
+  copyrightOwner: 'Amazon.com, Inc. or its affiliates. All Rights Reserved.',
   repositoryUrl: 'https://github.com/aws-rafams/agentcore-cr-constructs',
+  docgen: true,
+
+  cdkVersion: CDK_VERSION,
+  jsiiVersion: '~5.9.0',
+  packageManager: NodePackageManager.YARN_CLASSIC,
+  projenrcTs: true,
   description: `Experimental Construct Library for Amazon Bedrock AgentCore using Custom Resources .
     For quick experimentation, Not for production use. Breaking changes expected when official 
     L1 constructs are released and abstraction is re-implemented in\`@aws-cdk/aws-bedrock-agentcore-alpha\``,
-  packageName: 'agentcore-experimental-constructs',
   deps: [],
   peerDeps: [
     `@aws-cdk/aws-bedrock-agentcore-alpha@${CDK_VERSION}-alpha.0`,
@@ -27,9 +31,13 @@ const project = new awscdk.AwsCdkConstructLibrary({
   testdir: 'test',
   srcdir: 'lib',
 
+  stability: 'experimental',
+  keywords: ['aws', 'cdk', 'constructs', 'agentcore'],
   publishTasks: true,
+  defaultReleaseBranch: 'main',
   releaseToNpm: true,
   releaseEnvironment: 'ConstructPublishing',
+  packageName: 'agentcore-experimental-constructs',
 });
 
 project.synth();

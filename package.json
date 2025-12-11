@@ -76,7 +76,10 @@
     "@aws-sdk/client-bedrock-agentcore-control"
   ],
   "keywords": [
-    "cdk"
+    "agentcore",
+    "aws",
+    "cdk",
+    "constructs"
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
@@ -130,7 +133,7 @@
     }
   },
   "types": "lib/index.d.ts",
-  "stability": "stable",
+  "stability": "experimental",
   "jsii": {
     "outdir": "dist",
     "targets": {},
