@@ -1,10 +1,12 @@
-import { PolicyDefinition } from '@aws-sdk/client-bedrock-agentcore-control';
+/* eslint-disable @typescript-eslint/member-ordering */
 import { IGateway, IGatewayTarget } from '@aws-cdk/aws-bedrock-agentcore-alpha';
+import { PolicyDefinition } from '@aws-sdk/client-bedrock-agentcore-control';
 
 export interface IPolicyDefinition {
   /**
    * Renders the Policy
    */
+  /** @internal */
   __render(): PolicyDefinition;
 }
 
@@ -176,41 +178,35 @@ export interface CedarPolicyStatement {
   /**
    * The effect of the policy (permit or forbid)
    */
-  effect: CedarEffect;
+  readonly effect: CedarEffect;
   /**
    * WHO is making the request
    *
    * @default CedarPrincipal.anyOAuthUser()
    */
-  principal?: CedarPrincipalExpression;
+  readonly principal?: CedarPrincipalExpression;
   /**
    * WHAT action they want to perform (required)
    */
-  action: CedarActionExpression;
+  readonly action: CedarActionExpression;
   /**
    * WHICH resource they want to access (required)
    */
-  resource: CedarResourceExpression;
+  readonly resource: CedarResourceExpression;
   /**
    * Additional conditions that must be true for the policy to apply
    */
-  when?: string[];
+  readonly when?: string[];
   /**
    * Conditions that must be false for the policy to apply
    */
-  unless?: string[];
+  readonly unless?: string[];
 }
 
 /**
  * Represents a complete Cedar policy that can be rendered for AWS
  */
 export class CedarPolicy implements IPolicyDefinition {
-  readonly statement: string;
-
-  protected constructor(statement: string) {
-    this.statement = statement;
-  }
-
   /**
    * Creates a Cedar policy from a raw Cedar statement string
    * @param statement The raw Cedar policy statement
@@ -247,6 +243,13 @@ export class CedarPolicy implements IPolicyDefinition {
     return new CedarPolicy(statement);
   }
 
+  readonly statement: string;
+
+  protected constructor(statement: string) {
+    this.statement = statement;
+  }
+
+  /** @internal */
   __render(): PolicyDefinition {
     return {
       cedar: {

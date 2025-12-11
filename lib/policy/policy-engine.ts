@@ -11,14 +11,14 @@
  *  and limitations under the License.
  */
 
-import { Arn, ArnFormat, IResource, Resource } from 'aws-cdk-lib';
-import * as iam from 'aws-cdk-lib/aws-iam';
-import * as cr from 'aws-cdk-lib/custom-resources';
 import {
   CreatePolicyEngineCommandInput,
   DeletePolicyEngineCommandInput,
   UpdatePolicyEngineCommandInput,
 } from '@aws-sdk/client-bedrock-agentcore-control';
+import { Arn, ArnFormat, IResource, Resource } from 'aws-cdk-lib';
+import * as iam from 'aws-cdk-lib/aws-iam';
+import * as cr from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
 import { PolicyEnginePerms } from './perms';
 import { Policy, PolicyBaseProps } from './policy';

@@ -11,17 +11,17 @@
  *  and limitations under the License.
  */
 
-import { IResource, Resource } from 'aws-cdk-lib';
-import * as iam from 'aws-cdk-lib/aws-iam';
-import * as cr from 'aws-cdk-lib/custom-resources';
 import {
   CreatePolicyCommandInput,
   DeletePolicyCommandInput,
   UpdatePolicyCommandInput,
 } from '@aws-sdk/client-bedrock-agentcore-control';
+import { IResource, Resource } from 'aws-cdk-lib';
+import * as iam from 'aws-cdk-lib/aws-iam';
+import * as cr from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
-import { IPolicyEngine } from './policy-engine';
 import { IPolicyDefinition } from './cedar-policy';
+import { IPolicyEngine } from './policy-engine';
 
 /******************************************************************************
  *                              CONSTANTS

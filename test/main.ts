@@ -1,5 +1,8 @@
+import * as path from 'path';
+import { Gateway, ToolSchema } from '@aws-cdk/aws-bedrock-agentcore-alpha';
 import { App, CfnOutput, Stack, StackProps } from 'aws-cdk-lib';
 import { UserPoolClient } from 'aws-cdk-lib/aws-cognito';
+import { Function, Runtime, Code } from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 import {
   CedarPolicy,
@@ -9,10 +12,7 @@ import {
   CedarResource,
   PolicyEngine,
   ValidationMode,
-} from './lib/policy';
-import { Gateway, ToolSchema } from '@aws-cdk/aws-bedrock-agentcore-alpha';
-import { Function, Runtime, Code } from 'aws-cdk-lib/aws-lambda';
-import * as path from 'path';
+} from '../lib/policy';
 
 export class MyStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
