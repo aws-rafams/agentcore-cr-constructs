@@ -40,7 +40,7 @@ Policy components:
 
 Policies support both `PERMIT` and `FORBID` effects, with optional `when` and `unless` conditions for fine-grained control. The Cedar analyzer validates policies against your schema to ensure correctness and prevent authorization bypasses.
 
-<iframe src="agentcore-policy.pdf" width="100%" height="500" frameborder="0" />
+![](./readme-agentcore-policy.png)
 
 ## Documentation
 
