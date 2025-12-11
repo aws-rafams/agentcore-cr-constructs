@@ -14,12 +14,12 @@
 
 "@aws-cdk/aws-bedrock-agentcore-alpha@2.232.1-alpha.0":
   version "2.232.1-alpha.0"
-  resolved "https://registry.npmjs.org/@aws-cdk/aws-bedrock-agentcore-alpha/-/aws-bedrock-agentcore-alpha-2.232.1-alpha.0.tgz"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-bedrock-agentcore-alpha/-/aws-bedrock-agentcore-alpha-2.232.1-alpha.0.tgz#29b2b2b9e90277a7c7812b3edaa19e1e16246d3b"
   integrity sha512-TcDgi6RBbBXxAnji2BhzQ+Ku+Tchm9RMqAIapNUR4yBg3iw5Db6Xo1BbAEtDvvDm6yzStAhPJbUczScpXqc7Aw==
 
 "@aws-cdk/aws-lambda-python-alpha@2.232.1-alpha.0":
   version "2.232.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-lambda-python-alpha/-/aws-lambda-python-alpha-2.232.1-alpha.0.tgz#a4680b890d244038b8bcf15b64f0aeeb398531ea"
+  resolved "https://registry.npmjs.org/@aws-cdk/aws-lambda-python-alpha/-/aws-lambda-python-alpha-2.232.1-alpha.0.tgz"
   integrity sha512-r9okCgLbEadLdeCM7kz9Q44lcLRzGtll0XymrGPX0DCQSbd2a4ffr+/o9+GXSCeaQ0wc7MO/+44G+n08fuoJyg==
 
 "@aws-cdk/cloud-assembly-schema@^48.20.0":

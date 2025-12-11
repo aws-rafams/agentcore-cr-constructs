@@ -52,10 +52,3 @@ junit.xml
 tsconfig.json
 !/API.md
 !/.projenrc.ts
-
-# CDK output
-cdk.out/
-
-# Transpiled files in lib/policy
-lib/policy/*.js
-lib/policy/*.d.ts
