@@ -5,7 +5,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorAddress: 'rafams@amazon.co.uk',
   cdkVersion: CDK_VERSION,
   defaultReleaseBranch: 'main',
-  jsiiVersion: '*',
+  jsiiVersion: '~5.7.0',
   name: 'agentcore-experimental-constructs',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/rafams/agentcore-cr-constructs.git',
@@ -18,6 +18,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   devDeps: [`@aws-cdk/aws-lambda-python-alpha@${CDK_VERSION}-alpha.0`],
   testdir: 'test',
   srcdir: 'lib',
+
+  publishTasks: true,
 });
 
 project.synth();
