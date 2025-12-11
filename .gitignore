@@ -30,6 +30,9 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
+*.DS_STORE
+!.node-version
+.vscode
 /test-reports/
 junit.xml
 /coverage/
@@ -42,10 +45,8 @@ junit.xml
 !/.github/pull_request_template.md
 !/test/
 !/tsconfig.dev.json
-!/lib/
-/lib/**/*.js
-/lib/**/*.d.ts
-/lib/**/*.d.ts.map
+!/src/
+/lib
 /dist/
 !/.eslintrc.json
 .jsii

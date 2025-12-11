@@ -26,7 +26,7 @@
     "target": "ES2020"
   },
   "include": [
-    "lib/**/*.ts",
+    "src/**/*.ts",
     "test/**/*.ts",
     ".projenrc.ts",
     "projenrc/**/*.ts"

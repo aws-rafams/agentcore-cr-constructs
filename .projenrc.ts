@@ -29,8 +29,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     `@aws-cdk/aws-bedrock-alpha@${CDK_VERSION}-alpha.0`,
   ],
   testdir: 'test',
-  srcdir: 'lib',
-
+  srcdir: 'src',
+  gitignore: ['*.DS_STORE', '!.node-version', '.vscode'],
   stability: 'experimental',
   keywords: ['aws', 'cdk', 'constructs', 'agentcore'],
   publishTasks: true,
