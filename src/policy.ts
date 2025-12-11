@@ -272,7 +272,7 @@ export class Policy extends PolicyBase {
         service: 'bedrock-agentcore-control',
         action: 'DeletePolicyCommand',
         parameters: {
-          policyEngineId: cr.PhysicalResourceId.fromResponse('policyEngineId'),
+          policyEngineId: this.policyEngine.policyEngineId,
           policyId: new cr.PhysicalResourceIdReference().toString(),
         } as DeletePolicyCommandInput,
       },

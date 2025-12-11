@@ -30,7 +30,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   ],
   testdir: 'test',
   srcdir: 'src',
-  gitignore: ['*.DS_STORE', '!.node-version', '.vscode'],
+  gitignore: ['*.DS_STORE', '!.node-version', '.vscode', '/src/*/*.js', '/src/*/*.d.ts'],
   stability: 'experimental',
   keywords: ['aws', 'cdk', 'constructs', 'agentcore'],
   publishTasks: true,
