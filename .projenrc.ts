@@ -8,7 +8,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   jsiiVersion: '~5.9.0',
   name: 'agentcore-experimental-constructs',
   projenrcTs: true,
-  repositoryUrl: 'https://github.com/rafams/agentcore-cr-constructs.git',
+  repositoryUrl: 'https://github.com/aws-rafams/agentcore-cr-constructs',
   description: `Experimental Construct Library for Amazon Bedrock AgentCore using Custom Resources .
     For quick experimentation, Not for production use. Breaking changes expected when official 
     L1 constructs are released and abstraction is re-implemented in\`@aws-cdk/aws-bedrock-agentcore-alpha\``,

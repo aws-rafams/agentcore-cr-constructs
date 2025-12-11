@@ -3,7 +3,7 @@
   "description": "Experimental Construct Library for Amazon Bedrock AgentCore using Custom Resources .\n    For quick experimentation, Not for production use. Breaking changes expected when official \n    L1 constructs are released and abstraction is re-implemented in`@aws-cdk/aws-bedrock-agentcore-alpha`",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rafams/agentcore-cr-constructs.git"
+    "url": "https://github.com/aws-rafams/agentcore-cr-constructs"
   },
   "scripts": {
     "build": "npx projen build",
