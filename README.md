@@ -15,11 +15,44 @@ This library provides experimental CDK constructs for Amazon Bedrock AgentCore s
 - **Policy Engine**: Define and manage Cedar-based authorization policies
 - **Cedar Policy Builder**: Fluent API for creating Cedar policy statements
 
+## AgentCore Policy
+
+### Policy Engines
+
+A **Policy Engine** is a centralized authorization service that evaluates Cedar-based policies to make access control decisions for Amazon Bedrock AgentCore resources. Policy engines act as the governance layer between users and AI tools, ensuring that only authorized actions are permitted based on your organization's security requirements.
+
+Key characteristics:
+
+- **Centralized Authorization**: Single point of control for access decisions across multiple gateways and tools
+- **Cedar Policy Language**: Uses Amazon's Cedar policy language for expressive, human-readable authorization rules
+- **Real-time Evaluation**: Policies are evaluated in real-time during tool invocation requests
+
+### Policies
+
+**Policies** are individual Cedar-based authorization rules that define who can perform what actions on which resources under specific conditions. Each policy is associated with a policy engine and contains the business logic for access control decisions.
+
+Policy components:
+
+- **Principal**: Who is making the request (OAuth users, etc.)
+- **Action**: What operation is being requested (tool invocation, etc.)
+- **Resource**: What resource is being accessed (gateways, etc.)
+- **Conditions**: When the policy applies (context-dependent rules)
+
+Policies support both `PERMIT` and `FORBID` effects, with optional `when` and `unless` conditions for fine-grained control. The Cedar analyzer validates policies against your schema to ensure correctness and prevent authorization bypasses.
+
+<iframe src="agentcore-policy.pdf" width="100%" height="500" frameborder="0" />
+
+## Documentation
+
+📄 [Complete API Documentation](./API.md)
+
 ## Installation
 
 ```bash
 npm install agentcore-experimental-constructs
 ```
+
+# Policy
 
 ## Usage Examples
 
