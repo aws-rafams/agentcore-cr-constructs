@@ -1,10 +1,10 @@
-# AgentCore Experimental Constructs
+# AgentCore Experimental CDK L2 Constructs
 
 ![Experimental](https://img.shields.io/badge/status-experimental-orange.svg)
 ![CDK Version](https://img.shields.io/badge/CDK-v2.232.1-blue.svg)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)
 
-Experimental Construct Library for Amazon Bedrock AgentCore using Custom Resources.
+Experimental CDK Construct Library for Amazon Bedrock AgentCore using Custom Resources.
 
 ⚠️ **For quick experimentation, Not for production use.** Breaking changes expected when official L1 constructs are released and abstraction is re-implemented in `@aws-cdk/aws-bedrock-agentcore-alpha`.
 
