@@ -28,6 +28,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   srcdir: 'lib',
 
   publishTasks: true,
+  releaseToNpm: true,
+  releaseEnvironment: 'ConstructPublishing',
 });
 
 project.synth();
