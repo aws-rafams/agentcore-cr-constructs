@@ -90,3 +90,7 @@ export namespace PolicyPerms {
   export const DELETE_POLICY = 'bedrock-agentcore:DeletePolicy';
   export const UPDATE_POLICY = 'bedrock-agentcore:UpdatePolicy';
 }
+
+export namespace EvaluatorPerms {
+  export const EVALUATE = 'bedrock-agentcore:Evaluate';
+}

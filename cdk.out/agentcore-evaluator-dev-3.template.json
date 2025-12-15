@@ -1,0 +1,168 @@
+{
+ "Resources": {
+  "MyEvaluator408FCC11": {
+   "Type": "Custom::AWS",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+      "Arn"
+     ]
+    },
+    "Create": "{\"service\":\"bedrock-agentcore-control\",\"action\":\"CreateEvaluatorCommand\",\"parameters\":{\"evaluatorName\":\"MyEvaluator\",\"level\":\"TRACE\",\"description\":\"Evaluates custom stuff\",\"evaluatorConfig\":{\"llmAsAJudge\":{\"instructions\":\"\\n          You are an objective judge evaluating an AI assistant's response quality as to faithfulness, i.e. judge whether the AI assistant's response conflicts with the conversation history. The conversation history has multiple turns including:\\n          - User messages (User:)\\n          - Assistant responses (Assistant:)\\n          - API calls/actions taken by the assistant (Action:)\\n          - Tool outputs (Tool:)\\n          Focus your evaluation on the last assistant message in the conversation history.\\n\\n          ## Conversation History\\n          {context}\\n\\n          ## Assistant's Response\\n          {assistant_turn}\\n          \",\"ratingScale\":{\"numerical\":[{\"value\":0,\"label\":\"Not At All\",\"definition\":\"Almost all information in the assistant's response conflicts with the conversation history.\"},{\"value\":0.25,\"label\":\"Not Generally\",\"definition\":\"Most of the information in the assistant's response conflicts with the conversation history.\"},{\"value\":0.5,\"label\":\"Neutral/Mixed\",\"definition\":\"Approximately half of the information in the assistant's response conflicts with the conversation history.\"},{\"value\":0.75,\"label\":\"Generally Yes\",\"definition\":\"Information in the assistant's response rarely conflicts with the conversation history.\"},{\"value\":1,\"label\":\"Completely Yes\",\"definition\":\"The assistant's response does not contain any information conflicting the conversation history. If the AI assistant's response is chit chat, it is 'Completely Yes'.\"}]},\"modelConfig\":{\"bedrockEvaluatorModelConfig\":{\"modelId\":\"amazon.nova-pro-v1:0\",\"inferenceConfig\":{\"temperature\":0}}}}}},\"physicalResourceId\":{\"responsePath\":\"evaluatorId\"}}",
+    "Update": "{\"service\":\"bedrock-agentcore-control\",\"action\":\"UpdateEvaluatorCommand\",\"parameters\":{\"evaluatorId\":\"PHYSICAL:RESOURCEID:\",\"description\":\"Evaluates custom stuff\",\"evaluatorConfig\":{\"llmAsAJudge\":{\"instructions\":\"\\n          You are an objective judge evaluating an AI assistant's response quality as to faithfulness, i.e. judge whether the AI assistant's response conflicts with the conversation history. The conversation history has multiple turns including:\\n          - User messages (User:)\\n          - Assistant responses (Assistant:)\\n          - API calls/actions taken by the assistant (Action:)\\n          - Tool outputs (Tool:)\\n          Focus your evaluation on the last assistant message in the conversation history.\\n\\n          ## Conversation History\\n          {context}\\n\\n          ## Assistant's Response\\n          {assistant_turn}\\n          \",\"ratingScale\":{\"numerical\":[{\"value\":0,\"label\":\"Not At All\",\"definition\":\"Almost all information in the assistant's response conflicts with the conversation history.\"},{\"value\":0.25,\"label\":\"Not Generally\",\"definition\":\"Most of the information in the assistant's response conflicts with the conversation history.\"},{\"value\":0.5,\"label\":\"Neutral/Mixed\",\"definition\":\"Approximately half of the information in the assistant's response conflicts with the conversation history.\"},{\"value\":0.75,\"label\":\"Generally Yes\",\"definition\":\"Information in the assistant's response rarely conflicts with the conversation history.\"},{\"value\":1,\"label\":\"Completely Yes\",\"definition\":\"The assistant's response does not contain any information conflicting the conversation history. If the AI assistant's response is chit chat, it is 'Completely Yes'.\"}]},\"modelConfig\":{\"bedrockEvaluatorModelConfig\":{\"modelId\":\"amazon.nova-pro-v1:0\",\"inferenceConfig\":{\"temperature\":0}}}}}}}",
+    "Delete": "{\"service\":\"bedrock-agentcore-control\",\"action\":\"DeleteEvaluatorCommand\",\"parameters\":{\"evaluatorId\":\"PHYSICAL:RESOURCEID:\"}}",
+    "InstallLatestAwsSdk": true
+   },
+   "DependsOn": [
+    "MyEvaluatorCustomResourcePolicyB3E8DFD3"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "agentcore-evaluator-dev-3/MyEvaluator/Resource/Resource/Default"
+   }
+  },
+  "MyEvaluatorCustomResourcePolicyB3E8DFD3": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "bedrock-agentcore:*",
+        "iam:PassRole"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "MyEvaluatorCustomResourcePolicyB3E8DFD3",
+    "Roles": [
+     {
+      "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "agentcore-evaluator-dev-3/MyEvaluator/Resource/CustomResourcePolicy/Resource"
+   }
+  },
+  "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "agentcore-evaluator-dev-3/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource"
+   }
+  },
+  "AWS679f53fac002430cb0da5b7982bd22872D164C4C": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-249522321342-us-east-1",
+     "S3Key": "bc8ef58951f4c88e641dd23090e9d2e2e61c7530a07960e767522941e959b625.zip"
+    },
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs22.x",
+    "Timeout": 120
+   },
+   "DependsOn": [
+    "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "agentcore-evaluator-dev-3/AWS679f53fac002430cb0da5b7982bd2287/Resource",
+    "aws:asset:path": "asset.bc8ef58951f4c88e641dd23090e9d2e2e61c7530a07960e767522941e959b625",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/12OzW6DMAzHn6X34LZwWK+0Uq+d4AGQGzzkEpIJO0UV4t2ndIzDTr//lyXnkBc5HHc4SWbbPnN8h7lWtL2pSEIcLRkbRcPQjKsXKCe5vLNtgpM0s8Ph3iLMNfvOkQZ/jd4qB282cfnawsUwDjB/Bsf2lYpVVcFRsomLkaJBEVKBMsFIAedoe9IzCi3m3xvp7E+/97Vix75LxS3qd9TF+NASPGT/PJ4gP8DH7iHM2Ri98kBQ/fIHSsbB3RcBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "agentcore-evaluator-dev-3/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "MyEvaluatorArn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "MyEvaluator408FCC11",
+     "evaluatorArn"
+    ]
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

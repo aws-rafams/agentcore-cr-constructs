@@ -14,6 +14,7 @@ This library provides experimental CDK constructs for Amazon Bedrock AgentCore s
 
 - **Policy Engine**: Define and manage Cedar-based authorization policies
 - **Cedar Policy Builder**: Fluent API for creating Cedar policy statements
+- **Evaluations**: ![Under Development](https://img.shields.io/badge/status-under%20development-red.svg) Monitor and evaluate agent interactions in real-time
 
 ## AgentCore Policy
 
@@ -42,6 +43,34 @@ Policies support both `PERMIT` and `FORBID` effects, with optional `when` and `u
 
 ![](./readme-agentcore-policy.png)
 
+## AgentCore Evaluations
+
+![Under Development](https://img.shields.io/badge/status-under%20development-red.svg)
+
+⚠️ **Components not yet exported.** AgentCore Evaluations constructs are currently under active development and not available for use.
+
+### Online Evaluations
+
+**Online Evaluations** provide real-time monitoring and assessment of agent interactions, allowing you to continuously evaluate the quality, safety, and performance of your AI agents in production environments.
+
+Key capabilities:
+
+- **Real-time Monitoring**: Evaluate agent responses as they happen
+- **Custom Evaluators**: Define specific criteria for assessment
+- **Sampling Configuration**: Control evaluation frequency and scope
+- **Performance Metrics**: Track agent effectiveness over time
+
+### Evaluators
+
+**Evaluators** are assessment components that apply specific criteria to evaluate agent interactions. They can assess various aspects such as response quality, safety, relevance, and adherence to guidelines.
+
+Evaluator types:
+
+- **Built-in Evaluators**: Pre-configured assessment criteria
+- **Custom Evaluators**: User-defined evaluation logic with custom defined instructions, model, etc.
+
+_Note: Evaluation constructs will be exported in a future release when the implementation is complete._
+
 ## Documentation
 
 📄 [Complete API Documentation](./API.md)
@@ -51,7 +80,6 @@ Policies support both `PERMIT` and `FORBID` effects, with optional `when` and `u
 ```bash
 npm install agentcore-experimental-constructs
 ```
-
 
 ## Usage Examples
 

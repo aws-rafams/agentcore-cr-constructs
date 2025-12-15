@@ -1,0 +1,36 @@
+{
+  "version": "48.0.0",
+  "files": {
+    "bc8ef58951f4c88e641dd23090e9d2e2e61c7530a07960e767522941e959b625": {
+      "displayName": "AWS679f53fac002430cb0da5b7982bd2287/Code",
+      "source": {
+        "path": "asset.bc8ef58951f4c88e641dd23090e9d2e2e61c7530a07960e767522941e959b625",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "249522321342-us-east-1-36e6fae2": {
+          "bucketName": "cdk-hnb659fds-assets-249522321342-us-east-1",
+          "objectKey": "bc8ef58951f4c88e641dd23090e9d2e2e61c7530a07960e767522941e959b625.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::249522321342:role/cdk-hnb659fds-file-publishing-role-249522321342-us-east-1"
+        }
+      }
+    },
+    "3f1560ff3aad805690d7f829ddfc3642af444db3cbf1cb869905d07e6163f201": {
+      "displayName": "agentcore-evaluator-dev-2 Template",
+      "source": {
+        "path": "agentcore-evaluator-dev-2.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "249522321342-us-east-1-e46c7e08": {
+          "bucketName": "cdk-hnb659fds-assets-249522321342-us-east-1",
+          "objectKey": "3f1560ff3aad805690d7f829ddfc3642af444db3cbf1cb869905d07e6163f201.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::249522321342:role/cdk-hnb659fds-file-publishing-role-249522321342-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

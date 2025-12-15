@@ -12,7 +12,7 @@ import {
   CedarResource,
   PolicyEngine,
   ValidationMode,
-} from '../lib/policy';
+} from '../src';
 
 export class MyStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {

@@ -1,28 +1,28 @@
 {
   "version": "48.0.0",
   "artifacts": {
-    "agentcore-policy-dev.assets": {
+    "agentcore-evaluator-dev-3.assets": {
       "type": "cdk:asset-manifest",
       "properties": {
-        "file": "agentcore-policy-dev.assets.json",
+        "file": "agentcore-evaluator-dev-3.assets.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
       }
     },
-    "agentcore-policy-dev": {
+    "agentcore-evaluator-dev-3": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://249522321342/us-east-1",
       "properties": {
-        "templateFile": "agentcore-policy-dev.template.json",
+        "templateFile": "agentcore-evaluator-dev-3.template.json",
         "terminationProtection": false,
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::249522321342:role/cdk-hnb659fds-deploy-role-249522321342-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::249522321342:role/cdk-hnb659fds-cfn-exec-role-249522321342-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-249522321342-us-east-1/cfa9fbd427fcb81133d130b9996ac988c89d43f3e3bfc3b62bd02745528f9051.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-249522321342-us-east-1/52f88c17599de655860acde1cb1f686aeec6fd18376fb0611fc39b5b989b2cb5.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
-          "agentcore-policy-dev.assets"
+          "agentcore-evaluator-dev-3.assets"
         ],
         "lookupRole": {
           "arn": "arn:${AWS::Partition}:iam::249522321342:role/cdk-hnb659fds-lookup-role-249522321342-us-east-1",
@@ -31,58 +31,10 @@
         }
       },
       "dependencies": [
-        "agentcore-policy-dev.assets"
+        "agentcore-evaluator-dev-3.assets"
       ],
       "metadata": {
-        "/agentcore-policy-dev/Gateway/ServiceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "GatewayServiceRole162DEA77"
-          }
-        ],
-        "/agentcore-policy-dev/Gateway/ServiceRole/DefaultPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "GatewayServiceRoleDefaultPolicy5A851A93"
-          }
-        ],
-        "/agentcore-policy-dev/Gateway/UserPool/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "GatewayUserPoolAC9C51BE"
-          }
-        ],
-        "/agentcore-policy-dev/Gateway/UserPool/DefaultClient/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "GatewayUserPoolDefaultClient48FC6ADE"
-          }
-        ],
-        "/agentcore-policy-dev/Gateway/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "Gateway43CB3636"
-          }
-        ],
-        "/agentcore-policy-dev/Gateway/lambda/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "Gatewaylambda054AC44E"
-          }
-        ],
-        "/agentcore-policy-dev/Lambda/ServiceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "LambdaServiceRoleA8ED4D3B"
-          }
-        ],
-        "/agentcore-policy-dev/Lambda/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "LambdaD247545B"
-          }
-        ],
-        "/agentcore-policy-dev/PolicyEngine/Resource": [
+        "/agentcore-evaluator-dev-3/MyEvaluator/Resource": [
           {
             "type": "aws:cdk:warning",
             "data": "installLatestAwsSdk was not specified, and defaults to true. You probably do not want this. Set the global context flag '@aws-cdk/customresources:installLatestAwsSdkDefault' to false to switch this behavior off project-wide, or set the property explicitly to true if you know you need to call APIs that are not in Lambda's built-in SDK version. [ack: @aws-cdk/custom-resources:installLatestAwsSdkNotSpecified]",
@@ -91,9 +43,9 @@
               "Annotations.addWarningV2 (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/aws-cdk-lib/core/lib/annotations.js:1:984)",
               "new AwsCustomResource2 (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/aws-cdk-lib/custom-resources/lib/aws-custom-resource/aws-custom-resource.js:1:8150)",
               "new AwsCustomResource2 (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/aws-cdk-lib/core/lib/prop-injectable.js:1:681)",
-              "new PolicyEngine (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/lib/policy/policy-engine.ts:280:23)",
-              "new MyStack (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/main.ts:37:20)",
-              "Object.<anonymous> (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/main.ts:73:1)",
+              "new Evaluator (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/src/evaluator.ts:409:23)",
+              "new MyStack (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/test/main-2.ts:10:25)",
+              "Object.<anonymous> (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/test/main-2.ts:79:1)",
               "Module._compile (node:internal/modules/cjs/loader:1364:14)",
               "Module.m._compile (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1422:10)",
@@ -114,72 +66,19 @@
             ]
           }
         ],
-        "/agentcore-policy-dev/PolicyEngine/Resource/Resource/Default": [
+        "/agentcore-evaluator-dev-3/MyEvaluator/Resource/Resource/Default": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "PolicyEngineC2E220E9"
+            "data": "MyEvaluator408FCC11"
           }
         ],
-        "/agentcore-policy-dev/PolicyEngine/Resource/CustomResourcePolicy/Resource": [
+        "/agentcore-evaluator-dev-3/MyEvaluator/Resource/CustomResourcePolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "PolicyEngineCustomResourcePolicy2900A11A"
+            "data": "MyEvaluatorCustomResourcePolicyB3E8DFD3"
           }
         ],
-        "/agentcore-policy-dev/PolicyEngine/Policy-test_policy/Resource": [
-          {
-            "type": "aws:cdk:warning",
-            "data": "installLatestAwsSdk was not specified, and defaults to true. You probably do not want this. Set the global context flag '@aws-cdk/customresources:installLatestAwsSdkDefault' to false to switch this behavior off project-wide, or set the property explicitly to true if you know you need to call APIs that are not in Lambda's built-in SDK version. [ack: @aws-cdk/custom-resources:installLatestAwsSdkNotSpecified]",
-            "trace": [
-              "Annotations.addMessage (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/aws-cdk-lib/core/lib/annotations.js:1:2066)",
-              "Annotations.addWarningV2 (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/aws-cdk-lib/core/lib/annotations.js:1:984)",
-              "new AwsCustomResource2 (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/aws-cdk-lib/custom-resources/lib/aws-custom-resource/aws-custom-resource.js:1:8150)",
-              "new AwsCustomResource2 (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/aws-cdk-lib/core/lib/prop-injectable.js:1:681)",
-              "new Policy (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/lib/policy/policy.ts:248:23)",
-              "PolicyEngine.addPolicy (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/lib/policy/policy-engine.ts:154:12)",
-              "new MyStack (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/main.ts:42:12)",
-              "Object.<anonymous> (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/main.ts:73:1)",
-              "Module._compile (node:internal/modules/cjs/loader:1364:14)",
-              "Module.m._compile (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/ts-node/src/index.ts:1618:23)",
-              "Module._extensions..js (node:internal/modules/cjs/loader:1422:10)",
-              "Object.require.extensions.<computed> [as .ts] (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/ts-node/src/index.ts:1621:12)",
-              "Module.load (node:internal/modules/cjs/loader:1203:32)",
-              "Function.Module._load (node:internal/modules/cjs/loader:1019:12)",
-              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)",
-              "phase4 (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/ts-node/src/bin.ts:649:14)",
-              "bootstrap (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/ts-node/src/bin.ts:95:10)",
-              "main (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/ts-node/src/bin.ts:55:10)",
-              "Object.<anonymous> (/Users/rafams/Documents/local-dev/agentcore-cr-constructs/node_modules/ts-node/src/bin.ts:800:3)",
-              "Module._compile (node:internal/modules/cjs/loader:1364:14)",
-              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1422:10)",
-              "Module.load (node:internal/modules/cjs/loader:1203:32)",
-              "Function.Module._load (node:internal/modules/cjs/loader:1019:12)",
-              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)",
-              "node:internal/main/run_main_module:28:49"
-            ]
-          }
-        ],
-        "/agentcore-policy-dev/PolicyEngine/Policy-test_policy/Resource/Resource/Default": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "PolicyEnginePolicytestpolicy54319FEF"
-          }
-        ],
-        "/agentcore-policy-dev/PolicyEngine/Policy-test_policy/Resource/CustomResourcePolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "PolicyEnginePolicytestpolicyCustomResourcePolicy85A4FA50"
-          }
-        ],
-        "/agentcore-policy-dev/AWS679f53fac002430cb0da5b7982bd2287": [
-          {
-            "type": "aws:cdk:is-custom-resource-handler-singleton",
-            "data": true
-          },
-          {
-            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
-            "data": 0
-          },
+        "/agentcore-evaluator-dev-3/AWS679f53fac002430cb0da5b7982bd2287": [
           {
             "type": "aws:cdk:is-custom-resource-handler-singleton",
             "data": true
@@ -189,62 +88,44 @@
             "data": 0
           }
         ],
-        "/agentcore-policy-dev/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource": [
+        "/agentcore-evaluator-dev-3/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
           }
         ],
-        "/agentcore-policy-dev/AWS679f53fac002430cb0da5b7982bd2287/Resource": [
+        "/agentcore-evaluator-dev-3/AWS679f53fac002430cb0da5b7982bd2287/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AWS679f53fac002430cb0da5b7982bd22872D164C4C"
           }
         ],
-        "/agentcore-policy-dev/GatewayArn": [
+        "/agentcore-evaluator-dev-3/MyEvaluatorArn": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "GatewayArn"
+            "data": "MyEvaluatorArn"
           }
         ],
-        "/agentcore-policy-dev/GatewayUrl": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "GatewayUrl"
-          }
-        ],
-        "/agentcore-policy-dev/EngineArn": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "EngineArn"
-          }
-        ],
-        "/agentcore-policy-dev/EngineId": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "EngineId"
-          }
-        ],
-        "/agentcore-policy-dev/CDKMetadata/Default": [
+        "/agentcore-evaluator-dev-3/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadata"
           }
         ],
-        "/agentcore-policy-dev/BootstrapVersion": [
+        "/agentcore-evaluator-dev-3/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BootstrapVersion"
           }
         ],
-        "/agentcore-policy-dev/CheckBootstrapVersion": [
+        "/agentcore-evaluator-dev-3/CheckBootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CheckBootstrapVersion"
           }
         ]
       },
-      "displayName": "agentcore-policy-dev"
+      "displayName": "agentcore-evaluator-dev-3"
     },
     "Tree": {
       "type": "cdk:tree",
