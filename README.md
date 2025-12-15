@@ -52,9 +52,10 @@ Policies support both `PERMIT` and `FORBID` effects, with optional `when` and `u
 npm install agentcore-experimental-constructs
 ```
 
-# Policy
 
 ## Usage Examples
+
+For a complete example, see [test](./test) folder
 
 ```typescript
 import { App, CfnOutput, Stack, StackProps } from 'aws-cdk-lib';
